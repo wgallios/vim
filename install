@@ -33,7 +33,7 @@ fi
 
 log_daemon_msg "Install Vundle submodules ..."
 
-if git submodules update --init bundle/Vundle.vim; then
+if git submodule update --init bundle/Vundle.vim > /dev/null; then
     log_end_msg 0
 else
     log_end_msg 1
@@ -52,7 +52,7 @@ else
     exit 1
 fi
 
-echo "\nSetup is complete!\n"
+printf "\nSetup is complete!\n"
 
 # take user back to the dir they were in
 cd $PWD
