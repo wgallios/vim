@@ -1,0 +1,7 @@
+
+*.pyc
+*.swp
+*.swo
+bundle/*
+!bundle/Vundle.vim
+.netrwhist

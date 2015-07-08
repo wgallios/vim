@@ -1,0 +1,60 @@
+#!/bin/bash
+
+# Load the VERBOSE setting and other rcS variables
+. /lib/init/vars.sh
+
+# Define LSB log_* functions.
+# Depend on lsb-base (>= 3.2-14) to ensure that this file is present
+# and status_of_proc is working.
+. /lib/lsb/init-functions
+
+# users current location
+PWD=$(pwd)
+
+DIR=$(dirname $(readlink -f ${BASH_SOURCE[0]}))
+
+# present working directory
+# DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+
+# change directories to vim install path
+cd $DIR
+
+log_daemon_msg "Creating ~/.vimrc symlink"
+
+if ln -s $DIR/.vimrc $HOME/.vimrc; then
+    log_end_msg 0
+else
+    log_end_msg 1
+    cd $PWD
+    exit 1
+fi
+
+
+log_daemon_msg "Install Vundle submodules ..."
+
+if git submodules update --init bundle/Vundle.vim; then
+    log_end_msg 0
+else
+    log_end_msg 1
+    cd $PWD
+    exit 1
+fi
+
+
+log_daemon_msg "Installing Plugins ..."
+
+if vim +PluginInstall +qall; then
+    log_end_msg 0
+else
+    log_end_msg 1
+    cd $PWD
+    exit 1
+fi
+
+echo "\nSetup is complete!\n"
+
+# take user back to the dir they were in
+cd $PWD
+
+exit 0
