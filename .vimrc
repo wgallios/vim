@@ -39,6 +39,8 @@ cmap w!! w !sudo tee > /dev/null %
 nnoremap <Tab> >>
 nnoremap <Tab> >>
 
+nnoremap q <nop>
+
 vnoremap <Tab> >gv 
 vnoremap <S-Tab> <gv
 
@@ -151,6 +153,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-bufferline'
 Plugin 'vim-scripts/tComment'
 Plugin 'vim-scripts/AfterColors'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'vim-scripts/dbext.vim'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'scrooloose/syntastic'
 "Plugin 'itchyny/lightline.vim'
 
 
