@@ -157,6 +157,8 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-scripts/dbext.vim'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'scrooloose/syntastic'
+Plugin 'chrisbra/csv.vim.git'
+Plugin 'ervandew/supertab'
 "Plugin 'itchyny/lightline.vim'
 
 
