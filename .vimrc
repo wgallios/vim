@@ -159,8 +159,19 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'scrooloose/syntastic'
 Plugin 'chrisbra/csv.vim.git'
 Plugin 'ervandew/supertab'
+Plugin 'sudar/vim-arduino-syntax'
+Plugin 'jplaut/vim-arduino-ino'
+"Plugin 'tclem/vim-arduino'
 "Plugin 'itchyny/lightline.vim'
 
+" Arduino installation path
+let g:vim_arduino_library_path='/usr/share/arduino'
+
+" location of arduino serial port
+let g:vim_arduino_serial_port='/dev/ttyACM0'
+
+" enable keys
+let g:vim_arduino_map_keys=1
 
 "let g:lightline.separator={'left': '', 'right': ''}
 "let g:lightline = {
