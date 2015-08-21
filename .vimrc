@@ -152,7 +152,7 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-bufferline'
 Plugin 'vim-scripts/tComment'
-Plugin 'vim-scripts/AfterColors'
+"Plugin 'vim-scripts/AfterColors'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-scripts/dbext.vim'
 Plugin 'digitaltoad/vim-jade'
@@ -161,8 +161,21 @@ Plugin 'chrisbra/csv.vim.git'
 Plugin 'ervandew/supertab'
 Plugin 'sudar/vim-arduino-syntax'
 Plugin 'jplaut/vim-arduino-ino'
+Plugin 'danro/rename.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
 "Plugin 'tclem/vim-arduino'
 "Plugin 'itchyny/lightline.vim'
+
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 
 " Arduino installation path
 let g:vim_arduino_library_path='/usr/share/arduino'
