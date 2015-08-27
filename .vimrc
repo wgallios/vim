@@ -164,6 +164,7 @@ Plugin 'jplaut/vim-arduino-ino'
 Plugin 'danro/rename.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'groenewege/vim-less'
 
 "Plugin 'tclem/vim-arduino'
 "Plugin 'itchyny/lightline.vim'
