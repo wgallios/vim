@@ -44,7 +44,8 @@ fi
 
 log_daemon_msg "Installing Plugins ..."
 
-if vim +PluginInstall +qall; then
+# if vim +PluginInstall +qall; then
+if vim -E -u NONE -S ~/.vimrc  +PluginInstall +qall > /dev/null; then
     log_end_msg 0
 else
     log_end_msg 1
