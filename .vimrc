@@ -31,10 +31,78 @@ syntax enable
 colorscheme default
 set background=dark
 
+
+
+
+
+" fix diff colors
+highlight DiffText ctermbg=1
+
+if has("autocmd")
+    filetype plugin on
+    filetype indent on
+    let php_folding=1
+    " let php_sql_query=1
+    let php_htmlInStrings=1
+endif
+
+
+
+
+" Highlight conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+set statusline=%f    " Path.
+set statusline+=%m   " Modified flag.
+set statusline+=%r   " Readonly flag.
+set statusline+=%w   " Preview window flag.
+set statusline+=\    " Space.
+set statusline+=%=   " Right align.
+
+" File format, encoding and type.  Ex: "(unix/utf-8/python)"
+set statusline+=(
+set statusline+=%{&ff}                        " Format (unix/DOS).
+set statusline+=/
+set statusline+=%{strlen(&fenc)?&fenc:&enc}   " Encoding (utf-8).
+set statusline+=/
+set statusline+=%{&ft}                        " Type (python).
+set statusline+=)
+
+
+" Line and column position and counts.
+set statusline+=\ (line\ %l\/%L,\ col\ %03c)
+
+if &term == "screen" || &term == "screen-256color"
+
+    set ttymouse=xterm2
+endif
+
+
+" Set window title to same as statusline
+let &titlestring=&statusline
+
+
+" We know xterm-debian is a color terminal
+if &term =~ "xterm-debian" || &term =~ "xterm-xfree86"
+
+    set t_Co=256
+    set t_AB=^[[48;5;%dm
+    set t_AF=^[[38;5;%dm
+
+endif
+
+
+
+" keybindings
 let mapleader=","
 nmap ; :
 vmap ; :
 cmap w!! w !sudo tee > /dev/null %
+
+" Disable man key
+nnoremap K <nop>
+
+nnoremap tn :tabnew<Space>
 
 nnoremap <Tab> >>
 nnoremap <Tab> >>
@@ -102,6 +170,11 @@ inoremap <Esc>OS -
 
 noremap  <Esc>[1~ <Home>
 cnoremap <Esc>[1~ <Home>
+
+noremap  <Esc>[4~ <End>
+cnoremap <Esc>[4~ <End>
+inoremap <Esc>[4~ <End>
+
 
 " resize splits if/when windows resizes
 au VimResized * exe "normal! \<c-w>="
