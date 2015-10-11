@@ -9,12 +9,11 @@ set scrolloff=5
 set laststatus=2
 set numberwidth=1
 set foldcolumn=1
-
-
-set autoindent                                                                  
-set expandtab                                                                   
-set smarttab                                                                    
-set shiftwidth=4                                                                
+set autoindent
+set expandtab
+set smarttab
+set shiftwidth=4    
+set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize
 set softtabstop=4                                                               
 set tabstop=4                                                                   
 
@@ -101,7 +100,7 @@ cmap w!! w !sudo tee > /dev/null %
 
 " Disable man key
 nnoremap K <nop>
-
+nnoremap ` <nop>
 nnoremap tn :tabnew<Space>
 
 nnoremap <Tab> >>
@@ -152,21 +151,21 @@ endfun
 nmap <silent> _$ :call Preserve("%s/\\s\\+$//e")<CR><C-l> 
 
 " Fix keys over ssh
-inoremap <Esc>Oq 1
-inoremap <Esc>Or 2
-inoremap <Esc>Os 3
-inoremap <Esc>Ot 4
-inoremap <Esc>Ou 5
-inoremap <Esc>Ov 6
-inoremap <Esc>Ow 7
-inoremap <Esc>Ox 8
-inoremap <Esc>Oy 9
-inoremap <Esc>Op 0
-inoremap <Esc>On .
-inoremap <Esc>OR *
-inoremap <Esc>OQ /
-inoremap <Esc>Ol +
-inoremap <Esc>OS -
+" inoremap <Esc>Oq 1
+" inoremap <Esc>Or 2
+" inoremap <Esc>Os 3
+" inoremap <Esc>Ot 4
+" inoremap <Esc>Ou 5
+" inoremap <Esc>Ov 6
+" inoremap <Esc>Ow 7
+" inoremap <Esc>Ox 8
+" inoremap <Esc>Oy 9
+" inoremap <Esc>Op 0
+" inoremap <Esc>On .
+" inoremap <Esc>OR *
+" inoremap <Esc>OQ /
+" inoremap <Esc>Ol +
+" inoremap <Esc>OS -
 
 noremap  <Esc>[1~ <Home>
 cnoremap <Esc>[1~ <Home>
@@ -223,10 +222,12 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-bufferline'
+" Plugin 'bling/vim-bufferline'
 Plugin 'vim-scripts/tComment'
+" Plugin 'scrooloose/nerdcommenter'
 "Plugin 'vim-scripts/AfterColors'
 Plugin 'easymotion/vim-easymotion'
+" Plugin 'powerline/powerline'
 Plugin 'vim-scripts/dbext.vim'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'scrooloose/syntastic'
@@ -241,6 +242,14 @@ Plugin 'groenewege/vim-less'
 
 "Plugin 'tclem/vim-arduino'
 "Plugin 'itchyny/lightline.vim'
+
+" let g:Powerline_symbols = 'fancy'
+
+let g:syntastic_python_flake8_args = '--ignore=W191,E501,E128,W291,E126,E101'
+let b:syntastic_checkers = ['flake8']
+unlet! g:python_space_error_highlight
+let g:pymode_syntax_indent_errors = 0
+let g:pymode_syntax_space_errors = 0
 
 
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -286,6 +295,7 @@ let g:vim_arduino_map_keys=1
 "            \'line': '%l',
 "            \'column': '%c',
 "            \'close': '%999X X '}
+" set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 
 call vundle#end()
 filetype plugin indent on
