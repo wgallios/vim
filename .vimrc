@@ -172,21 +172,21 @@ endfun
 nmap <silent> _$ :call Preserve("%s/\\s\\+$//e")<CR><C-l> 
 
 " Fix keys over ssh
-" inoremap <Esc>Oq 1
-" inoremap <Esc>Or 2
-" inoremap <Esc>Os 3
-" inoremap <Esc>Ot 4
-" inoremap <Esc>Ou 5
-" inoremap <Esc>Ov 6
-" inoremap <Esc>Ow 7
-" inoremap <Esc>Ox 8
-" inoremap <Esc>Oy 9
-" inoremap <Esc>Op 0
-" inoremap <Esc>On .
-" inoremap <Esc>OR *
-" inoremap <Esc>OQ /
-" inoremap <Esc>Ol +
-" inoremap <Esc>OS -
+inoremap <Esc>Oq 1
+inoremap <Esc>Or 2
+inoremap <Esc>Os 3
+inoremap <Esc>Ot 4
+inoremap <Esc>Ou 5
+inoremap <Esc>Ov 6
+inoremap <Esc>Ow 7
+inoremap <Esc>Ox 8
+inoremap <Esc>Oy 9
+inoremap <Esc>Op 0
+inoremap <Esc>On .
+inoremap <Esc>OR *
+inoremap <Esc>OQ /
+inoremap <Esc>Ol +
+inoremap <Esc>OS -
 
 noremap  <Esc>[1~ <Home>
 cnoremap <Esc>[1~ <Home>
@@ -261,6 +261,7 @@ Plugin 'danro/rename.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'groenewege/vim-less'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " Plugin 'easymotion/vim-easymotion'
 "Plugin 'tclem/vim-arduino'
@@ -339,6 +340,14 @@ omap / <Plug>(easymotion-tn)
 " " different highlight method and have some other features )
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
+
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> {Left-mapping} :TmuxNavigateLeft<cr>
+nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
+nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
+nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
+nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 call vundle#end()
 filetype plugin indent on
