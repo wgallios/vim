@@ -17,6 +17,10 @@ set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize
 set softtabstop=4                                                               
 set tabstop=4
 
+" Splits open to the right then bottom
+set splitbelow
+set splitright
+
 if !has('gui_running')
     set t_Co=256
 endif
@@ -31,7 +35,11 @@ colorscheme default
 set background=dark
 
 
-
+" just Ctrl + JKLH to move between splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Space toggles folds
 nnoremap <Space> za
@@ -190,6 +198,7 @@ inoremap <Esc>[4~ <End>
 
 " resize splits if/when windows resizes
 au VimResized * exe "normal! \<c-w>="
+
 
 " keybindings for Tcomment
 nmap C :TComment<CR>
