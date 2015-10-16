@@ -15,7 +15,7 @@ set smarttab
 set shiftwidth=4    
 set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize
 set softtabstop=4                                                               
-set tabstop=4                                                                   
+set tabstop=4
 
 if !has('gui_running')
     set t_Co=256
@@ -31,6 +31,14 @@ colorscheme default
 set background=dark
 
 
+
+
+" Space toggles folds
+nnoremap <Space> za
+vnoremap <Space> za
+"
+" " z0 = recursively open top-level fold we're in
+nnoremap z0 zCz0
 
 
 
