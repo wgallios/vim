@@ -64,6 +64,11 @@ set statusline+=%m   " Modified flag.
 set statusline+=%r   " Readonly flag.
 set statusline+=%w   " Preview window flag.
 set statusline+=\    " Space.
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 set statusline+=%=   " Right align.
 
 " File format, encoding and type.  Ex: "(unix/utf-8/python)"
@@ -236,7 +241,7 @@ Plugin 'vim-scripts/tComment'
 "Plugin 'vim-scripts/AfterColors'
 Plugin 'easymotion/vim-easymotion'
 " Plugin 'powerline/powerline'
-Plugin 'vim-scripts/dbext.vim'
+" Plugin 'vim-scripts/dbext.vim'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'scrooloose/syntastic'
 Plugin 'chrisbra/csv.vim.git'
@@ -248,16 +253,25 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'groenewege/vim-less'
 
+" Plugin 'easymotion/vim-easymotion'
 "Plugin 'tclem/vim-arduino'
 "Plugin 'itchyny/lightline.vim'
 
 " let g:Powerline_symbols = 'fancy'
 
 let g:syntastic_python_flake8_args = '--ignore=W191,E501,E128,W291,E126,E101'
-let b:syntastic_checkers = ['flake8']
+" let b:syntastic_checkers = ['flake8']
+let g:syntastic_php_checkers = ['php']
+let b:syntastic_checkers = ['pylint']
 unlet! g:python_space_error_highlight
 let g:pymode_syntax_indent_errors = 0
 let g:pymode_syntax_space_errors = 0
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1
 
 
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -304,6 +318,18 @@ let g:vim_arduino_map_keys=1
 "            \'column': '%c',
 "            \'close': '%999X X '}
 " set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+
+
+" Gif config
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+
+" " These `n` & `N` mappings are options. You do not have to map `n` & `N` to
+" EasyMotion.
+" " Without these mappings, `n` & `N` works fine. (These mappings just provide
+" " different highlight method and have some other features )
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
 
 call vundle#end()
 filetype plugin indent on
