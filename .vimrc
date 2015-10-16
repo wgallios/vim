@@ -262,7 +262,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'groenewege/vim-less'
 Plugin 'christoomey/vim-tmux-navigator'
-
+Plugin 'vim-scripts/python.vim--Vasiliev'
 " Plugin 'easymotion/vim-easymotion'
 "Plugin 'tclem/vim-arduino'
 "Plugin 'itchyny/lightline.vim'
