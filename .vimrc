@@ -35,6 +35,8 @@ colorscheme default
 set background=dark
 
 
+set pastetoggle=<F2>
+
 " just Ctrl + JKLH to move between splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -263,6 +265,9 @@ Plugin 'honza/vim-snippets'
 Plugin 'groenewege/vim-less'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-scripts/python.vim--Vasiliev'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/taglist.vim'
+" Plugin 'vim-scripts/functionlist.vim'
 " Plugin 'easymotion/vim-easymotion'
 "Plugin 'tclem/vim-arduino'
 "Plugin 'itchyny/lightline.vim'
@@ -328,6 +333,17 @@ let g:vim_arduino_map_keys=1
 "            \'column': '%c',
 "            \'close': '%999X X '}
 " set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+
+
+" Show NERDTree
+noremap <silent> <F2> :NERDTreeToggle<CR>
+
+" Show Tabman
+" noremap <silent> <F3> :TMToggle<CR>
+
+" Show Function List
+" noremap <silent> <F4> :Flisttoggle<CR>
+noremap <silent> <F4> :TlistToggle<CR>
 
 
 " Gif config
