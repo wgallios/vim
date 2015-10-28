@@ -21,6 +21,9 @@ set tabstop=4
 set splitbelow
 set splitright
 
+" Highlight search
+set hlsearch
+
 if !has('gui_running')
     set t_Co=256
 endif
