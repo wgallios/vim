@@ -38,7 +38,7 @@ colorscheme default
 set background=dark
 
 
-set pastetoggle=<F2>
+set pastetoggle=<F3>
 
 " just Ctrl + JKLH to move between splits
 nnoremap <C-J> <C-W><C-J>
