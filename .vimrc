@@ -3,7 +3,7 @@ set showtabline=2
 set ruler
 set number
 set mouse=a
-set relativenumber
+" set relativenumber
 set scrolloff=5
 "set list
 set laststatus=2
@@ -261,7 +261,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'chrisbra/csv.vim.git'
 Plugin 'ervandew/supertab'
 Plugin 'sudar/vim-arduino-syntax'
-Plugin 'jplaut/vim-arduino-ino'
+" Plugin 'jplaut/vim-arduino-ino'
+Plugin 'tclem/vim-arduino'
 Plugin 'danro/rename.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -281,16 +282,18 @@ Plugin 'vim-airline/vim-airline-themes'
 let g:syntastic_python_flake8_args = '--ignore=W191,E501,E128,W291,E126,E101'
 " let b:syntastic_checkers = ['flake8']
 let g:syntastic_php_checkers = ['php']
-let b:syntastic_checkers = ['pylint']
+" let b:syntastic_checkers = ['pylint']
+let b:syntastic_python_checkers = ['flake8']
 unlet! g:python_space_error_highlight
 let g:pymode_syntax_indent_errors = 0
 let g:pymode_syntax_space_errors = 0
 
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
+let g:syntastic_loc_list_height=3
 
 
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -302,7 +305,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 
 " Arduino installation path
-let g:vim_arduino_library_path='/usr/share/arduino'
+let g:vim_arduino_library_path='/usr/share/share/arduino'
 
 " location of arduino serial port
 let g:vim_arduino_serial_port='/dev/ttyACM0'
@@ -368,6 +371,12 @@ nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
 nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
 nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
 nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+
+
+"Default: /Applications/Arduino.app/Contents/Resources/Java
+let g:vim_arduino_library_path = "/usr/local/share/arduino"
+""Default: result of `$(ls /dev/tty.* | grep usb)`
+let g:vim_arduino_serial_port = "/dev/ttyACM0"
 
 call vundle#end()
 filetype plugin indent on
