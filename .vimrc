@@ -28,6 +28,11 @@ if !has('gui_running')
     set t_Co=256
 endif
 
+" gets rid of ex mode
+nnoremap Q <nop>
+
+set t_ut=
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='badwolf'
@@ -37,6 +42,15 @@ syntax enable
 colorscheme default
 set background=dark
 
+map <Esc>[B <Down>
+
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
 
 set pastetoggle=<F3>
 
@@ -267,7 +281,7 @@ Plugin 'danro/rename.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'groenewege/vim-less'
-Plugin 'christoomey/vim-tmux-navigator'
+" Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-scripts/python.vim--Vasiliev'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/taglist.vim'
@@ -276,6 +290,7 @@ Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'easymotion/vim-easymotion'
 "Plugin 'tclem/vim-arduino'
 "Plugin 'itchyny/lightline.vim'
+Plugin 'unblevable/quick-scope'
 
 " let g:Powerline_symbols = 'fancy'
 
@@ -364,13 +379,13 @@ omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
-let g:tmux_navigator_no_mappings = 1
+" let g:tmux_navigator_no_mappings = 1
 
-nnoremap <silent> {Left-mapping} :TmuxNavigateLeft<cr>
-nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
-nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
-nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
-nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+" nnoremap <silent> {Left-mapping} :TmuxNavigateLeft<cr>
+" nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
+" nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
+" nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
+" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 
 "Default: /Applications/Arduino.app/Contents/Resources/Java
