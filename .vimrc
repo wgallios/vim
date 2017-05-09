@@ -3,7 +3,7 @@ set showtabline=2
 set ruler
 set number
 set mouse=a
-" set relativenumber
+set relativenumber
 set scrolloff=5
 "set list
 set laststatus=2
@@ -232,7 +232,7 @@ nnoremap <leader>, A,<Esc>A
 " leader key <,> + A to add commad at end of line
 nnoremap <leader>; A;
 " press ; twice to add ; at end of current line
-inoremap ;; <Esc>A; 
+inoremap ;; <Esc>A;
 
 " resize horizontal split
 nmap <C-Up> <C-W>-<C-W>-
@@ -247,7 +247,7 @@ highlight ColorColumn ctermbg=DarkMagenta
 highlight ColorColumn ctermfg=15
 highlight FoldColumn ctermbg=3
 highlight FoldColumn ctermfg=1
-set cc=1,2,3,4,80
+" set cc=1,2,3,4,80
 
 "fix different colors
 highlight DiffText ctermbg=1
@@ -291,6 +291,8 @@ Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'tclem/vim-arduino'
 "Plugin 'itchyny/lightline.vim'
 Plugin 'unblevable/quick-scope'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'guns/xterm-color-table.vim'
 
 " let g:Powerline_symbols = 'fancy'
 
@@ -392,6 +394,16 @@ map  N <Plug>(easymotion-prev)
 let g:vim_arduino_library_path = "/usr/local/share/arduino"
 ""Default: result of `$(ls /dev/tty.* | grep usb)`
 let g:vim_arduino_serial_port = "/dev/ttyACM0"
+
+
+" for indent guides
+set ts=4 sw=4 et
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray   ctermbg=237
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray ctermbg=238
 
 call vundle#end()
 filetype plugin indent on
