@@ -291,8 +291,9 @@ Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'tclem/vim-arduino'
 "Plugin 'itchyny/lightline.vim'
 Plugin 'unblevable/quick-scope'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'guns/xterm-color-table.vim'
+Plugin 'Yggdroot/indentLine'
+Plugin 'kien/rainbow_parentheses.vim'
 
 " let g:Powerline_symbols = 'fancy'
 
@@ -395,15 +396,13 @@ let g:vim_arduino_library_path = "/usr/local/share/arduino"
 ""Default: result of `$(ls /dev/tty.* | grep usb)`
 let g:vim_arduino_serial_port = "/dev/ttyACM0"
 
+" indent line
+let g:indentLine_char = '⟫'
 
-" for indent guides
-set ts=4 sw=4 et
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray   ctermbg=237
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray ctermbg=238
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 call vundle#end()
 filetype plugin indent on
