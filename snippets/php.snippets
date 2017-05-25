@@ -1,0 +1,114 @@
+snippet while
+	while (${1:/* condition */})
+	{
+		${2:// code...}
+	}
+snippet fore
+	foreach ($${1:variable} as $${2:key}) 
+	{
+		${3:// code...}
+	}
+snippet arr
+	$${1:arrayName} = array
+	(
+		'${2}' => ${3},
+	);${4}
+snippet if
+	if (${1: /* condition */})
+	{
+		${2:// code ...}
+	}
+snippet function
+	function ${1:functionName} ($${2:variable})
+	{
+		${3://code ...}
+	}
+snippet sql
+	sql = "${1://SELECT * FROM ...}";
+
+	$query = $this->db->query($sql);
+
+	$results = $query->result();
+
+	return $results;
+snippet insert
+	$sql = "${1://INSERT INTO ...}";
+
+	$this->db->query($sql);
+
+	return true;
+snippet string
+	$${1:stringVariableName} = "${2://String...}";
+snippet table
+	table class='${1:class}'>
+		<thead>
+			<tr>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+snippet div
+	div class='${1:class}'>
+		${2:<!-- HTML //-->}
+	</div>
+snippet try
+	try
+	{
+
+	}
+	catch(Exception $e)
+	{
+
+	}
+snippet throw
+	throw new Exception("${1:exceptionMsg}");
+snippet control-group
+	<div class="control-group">
+		<label class='control-label' for='${1:ID}'>${2:lbl}</label>
+		<div class="controls">
+			
+		</div>
+	</div>
+snippet form-group
+	<div class="form-group">
+		<label class='col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label' for='${1:ID}'>${2:lbl}</label>
+		<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 controls">
+			
+		</div> <!-- .controls -->
+	</div> <!-- .form-group -->
+snippet <input
+	<input type='${1:type}' name='${2:name}' id='${3:id}' value="${5:value}" placeholder='${4:placeholder}'>
+snippet <select
+	<select name="${1:name}" id="${2:id}">
+		<option value=""></option>
+		${3:<!-- options -->}
+	</select>
+snippet <button
+	<button type='${1:type}' class='${2:class}' name='${3:name}' id='${4:id}'>${5:btnTxt}</button>
+snippet <textarea
+	<textarea name='${1:name}' id='${2:id}'></textarea>
+snippet <ul
+	<ul id='${1:id}' class='${2:class}'>
+		<li></li>
+		<li><a href='#'></a></li>
+	</ul>
+snippet <ol
+	<ol id='${1:id}' class='${2:class}'>
+		<li></li>
+		<li><a href='#'></a></li>
+	</ol>
+snippet db
+	$this->db->${1:function}(${2:params});
+snippet cidb
+	$this->ci->db->${1:function}(${2:params});
+snippet <!
+	<!-- ${1:comment} -->
+snippet divcol
+	<div class='col-lg-${1:12} col-m-${2:12} col-s-${3:12} col-xs-${4:12}'>
+		
+	</div>

@@ -1,0 +1,9 @@
+snippet #!
+	#!/usr/bin/env python
+snippet try
+	try
+		${1}
+	except Exception as e:
+		log.exception(e)
+snippet print
+	print("${1}"${2: % (vars))

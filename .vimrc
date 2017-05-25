@@ -39,7 +39,9 @@ let g:airline_theme='badwolf'
 
 syntax on
 syntax enable
-colorscheme default
+"colorscheme default
+colorscheme dtrip
+
 set background=dark
 
 map <Esc>[B <Down>
@@ -290,12 +292,16 @@ Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'easymotion/vim-easymotion'
 "Plugin 'tclem/vim-arduino'
 "Plugin 'itchyny/lightline.vim'
-Plugin 'unblevable/quick-scope'
+" Plugin 'unblevable/quick-scope'
 Plugin 'guns/xterm-color-table.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'freeo/vim-kalisi'
+Plugin 'vim-scripts/Gundo'
 
+call vundle#end()
 " let g:Powerline_symbols = 'fancy'
+
 
 let g:syntastic_python_flake8_args = '--ignore=W191,E501,E128,W291,E126,E101'
 " let b:syntastic_checkers = ['flake8']
@@ -404,5 +410,11 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-call vundle#end()
+" colorscheme kalisi
+let g:dtrip_recolor_quickfixsigns = 1 
+
+
+" Toggle Gundo graph
+nnoremap <F5> :GundoToggle<CR>
+
 filetype plugin indent on

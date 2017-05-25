@@ -1,0 +1,97 @@
+snippet .get
+	.get("${1:url}", function(data) {
+		${2://code...}
+	});
+snippet .post
+	.post("${1:url}", $('#${2:FormID}').serialize(), function(data) {
+		${3://code...}
+	});
+snippet $
+	$('#${1:selector}').${2:function}
+snippet func
+	function ${1} (${2}) {
+		${3}
+	}
+snippet .click
+	.click(function(e){
+		${1://code}
+	});
+snippet try
+	try {
+		${1}
+	} catch (e) {
+
+	}
+snippet con
+	console.log(${1});
+snippet {}
+	{
+		${1:key}: ${2}
+	}
+snippet []
+	[${1:value}]
+snippet req
+	${3:global.}${2:module} = require('${1:module}');
+snippet jsonr
+	_this.jsonr(${1:200}, ${2:msg}, ${3:data});
+snippet $loge
+	$log.error(${1});
+snippet $log
+	$log.debug(${1});
+snippet log
+	log.debug(${1});
+snippet loge
+	log.error(${1});
+snippet $sc
+	$scope.${1}
+snippet this
+	var _this = this;
+snippet proto
+	${1:Object}.prototype.${2:name} = function () {
+	};
+snippet for
+	for (var i = 0; i < ${1:length}; i++) {
+	
+	}
+snippet len
+	length
+snippet sub
+	substring(${1:start},${2:stop});
+snippet sp
+	split('{$1}');
+snippet jo
+	join('${1}');
+snippet Arr
+	Array(${1});
+snippet $http
+	$http({
+		url: '${1:/}',
+		method: '${2:GET}',
+		${3:data: {}}
+	}).success(function (data, status) {
+		
+	}).error(function (data, status) {
+	
+	});
+snippet Q.pro
+	Q.promise(function(resolve, reject, notify) {
+		${1}
+	});
+snippet logline
+	console.log(Array(${1:30}).join('-'));
+snippet chalk
+	var chalk = require('chalk');
+snippet async.each
+	async.each(${1:array}, function (${2:item}, callback) {
+		${3}
+	}, function (err) {
+		
+	});
+snippet app.factory
+	app.factory('${1:factoryName}', function (
+		$log
+	) {
+		return {
+			
+		};
+	});
