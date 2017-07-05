@@ -298,6 +298,9 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'freeo/vim-kalisi'
 Plugin 'vim-scripts/Gundo'
+Plugin 'raimondi/delimitmate'
+Plugin 'ryanoasis/vim-devicons'
+" Plugin 'yonchu/accelerated-smooth-scroll'
 
 call vundle#end()
 " let g:Powerline_symbols = 'fancy'
@@ -403,7 +406,7 @@ let g:vim_arduino_library_path = "/usr/local/share/arduino"
 let g:vim_arduino_serial_port = "/dev/ttyACM0"
 
 " indent line
-let g:indentLine_char = '⟫'
+let g:indentLine_char = '│'
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
