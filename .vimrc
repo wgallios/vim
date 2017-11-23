@@ -295,7 +295,7 @@ Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'unblevable/quick-scope'
 Plugin 'guns/xterm-color-table.vim'
 Plugin 'Yggdroot/indentLine'
-Plugin 'kien/rainbow_parentheses.vim'
+" Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'freeo/vim-kalisi'
 Plugin 'vim-scripts/Gundo'
 Plugin 'raimondi/delimitmate'
@@ -408,10 +408,10 @@ let g:vim_arduino_serial_port = "/dev/ttyACM0"
 " indent line
 let g:indentLine_char = '│'
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 
 " colorscheme kalisi
 let g:dtrip_recolor_quickfixsigns = 1 
