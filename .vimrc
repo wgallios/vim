@@ -24,6 +24,9 @@ set splitright
 " Highlight search
 set hlsearch
 
+" Fix E303 - http://languor.us/vim-e303-unable-open-swap-file-no-name-recovery-impossible
+set directory=.,$TEMP
+
 if !has('gui_running')
     set t_Co=256
 endif
