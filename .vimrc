@@ -303,6 +303,7 @@ Plugin 'freeo/vim-kalisi'
 Plugin 'vim-scripts/Gundo'
 Plugin 'raimondi/delimitmate'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'sirtaj/vim-openscad'
 " Plugin 'yonchu/accelerated-smooth-scroll'
 
 call vundle#end()
