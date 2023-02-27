@@ -5,7 +5,7 @@ VIM Setup
 ## Installation
 
 ```
-$ git clone https://github.com/dtrip/vim ~/.vim
+$ git clone https://github.com/wgallios/vim ~/.vim
 $ bash ~/.vim/install
 ```
 
