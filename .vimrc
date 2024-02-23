@@ -17,6 +17,9 @@ set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize
 set softtabstop=4                                                               
 set tabstop=4
 
+" disable code folding
+set nofoldenable
+
 " Splits open to the right then bottom
 set splitbelow
 set splitright
