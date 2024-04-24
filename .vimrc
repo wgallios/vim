@@ -309,8 +309,16 @@ Plugin 'ryanoasis/vim-devicons'
 " Plugin 'sirtaj/vim-openscad'
 " Plugin 'yonchu/accelerated-smooth-scroll'
 
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
+
+Plugin 'pangloss/vim-javascript'
+
 call vundle#end()
 " let g:Powerline_symbols = 'fancy'
+
+" set filetypes as typescriptreact
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 
 
 let g:syntastic_python_flake8_args = '--ignore=W191,E501,E128,W291,E126,E101'
