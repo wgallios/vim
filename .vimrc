@@ -279,7 +279,9 @@ Plugin 'easymotion/vim-easymotion'
 " Plugin 'powerline/powerline'
 " Plugin 'vim-scripts/dbext.vim'
 " Plugin 'digitaltoad/vim-jade'
+
 Plugin 'scrooloose/syntastic'
+
 " Plugin 'chrisbra/csv.vim.git'
 Plugin 'ervandew/supertab'
 " Plugin 'sudar/vim-arduino-syntax'
@@ -313,6 +315,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
 
 Plugin 'pangloss/vim-javascript'
+Plugin 'github/copilot.vim'
 
 call vundle#end()
 " let g:Powerline_symbols = 'fancy'
@@ -324,6 +327,7 @@ autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 let g:syntastic_python_flake8_args = '--ignore=W191,E501,E128,W291,E126,E101'
 " let b:syntastic_checkers = ['flake8']
 let g:syntastic_php_checkers = ['php']
+let g:syntastic_js_checkers = ['jshint']
 " let b:syntastic_checkers = ['pylint']
 let b:syntastic_python_checkers = ['flake8']
 unlet! g:python_space_error_highlight
