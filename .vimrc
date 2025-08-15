@@ -316,6 +316,7 @@ Plugin 'peitalin/vim-jsx-typescript'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'github/copilot.vim'
+Plugin 'junegunn/vim-easy-align'
 
 call vundle#end()
 " let g:Powerline_symbols = 'fancy'
