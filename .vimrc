@@ -440,4 +440,10 @@ let g:dtrip_recolor_quickfixsigns = 1
 " Toggle Gundo graph
 nnoremap <F5> :GundoToggle<CR>
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
 filetype plugin indent on
